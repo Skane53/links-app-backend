@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "build": "./node_modules/.bin/netlify-lambda build src",
+    "build": "npm build",
     "build:staging": "env-cmd -f .env.staging npm run build"
   },
   "author": "",
