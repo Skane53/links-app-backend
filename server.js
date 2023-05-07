@@ -3,7 +3,11 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3001", "https://links-app-khoumzy.onrender.com"],
+  })
+);
 app.use(express.json());
 
 mongoose.connect(
@@ -12,6 +16,7 @@ mongoose.connect(
 
 app.use("/", require("./routes/linkRoute"));
 
-app.listen(3001, () => {
-  console.log("Server is running at port 3001 ...");
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
+  console.log(`Server is running at port ${port} ...`);
 });
