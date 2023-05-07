@@ -5,7 +5,10 @@ const mongoose = require("mongoose");
 
 app.use(
   cors({
-    origin: ["http://localhost:3001", "https://links-app-khoumzy.onrender.com"],
+    origin: [
+      "http://localhost:3001",
+      "https://links-app-khoumzy-api.onrender.com",
+    ],
   })
 );
 app.use(express.json());
