@@ -7,7 +7,6 @@ const { urlencoded } = require("body-parser");
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
       "https://links-app-khoumzy.onrender.com/",
     ],
   })
