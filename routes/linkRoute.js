@@ -33,32 +33,30 @@ router.route("/delete").post((req, res) => {
   }
 });
 
-router
-  .route(`https://links-app-khoumzy-api.onrender.com/links`)
-  .post((req, res) => {
-    Link.aggregate([
-      {
-        $search: {
-          text: {
-            query: req.body.query,
-            path: "courseTitle",
-          },
+router.route(`/links`).post((req, res) => {
+  Link.aggregate([
+    {
+      $search: {
+        text: {
+          query: req.body.query,
+          path: "courseTitle",
         },
       },
-      {
-        $project: {
-          _id: 0,
-          courseTitle: 1,
-        },
+    },
+    {
+      $project: {
+        _id: 0,
+        courseTitle: 1,
       },
-      {
-        $limit: 3,
-      },
-    ]).then((foundCourses) => {
-      console.log(foundCourses);
-      //res.json(foundCourses);
-    });
+    },
+    {
+      $limit: 3,
+    },
+  ]).then((foundCourses) => {
+    console.log(foundCourses);
+    //res.json(foundCourses);
   });
+});
 
 router.route("/links").get((req, res) => {
   Link.find().then((foundLinks) => res.json(foundLinks));
