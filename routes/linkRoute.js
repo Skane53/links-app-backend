@@ -59,7 +59,9 @@ router.route(`/links`).post((req, res) => {
 });
 
 router.route("/links").get((req, res) => {
-  Link.find().then((foundLinks) => res.json(foundLinks));
+  Link.find().then((foundLinks) => {
+    res.json(foundLinks);
+  });
 });
 
 router.route("/links/:title").get((req, res) => {
