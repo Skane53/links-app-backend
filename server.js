@@ -6,16 +6,15 @@ const { urlencoded } = require("body-parser");
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://links-app-khoumzy.onrender.com/",
-    ],
+    origin: ["https://links-app-khoumzy.onrender.com/"],
   })
 );
 app.use(urlencoded({ extended: false }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(
+  "mongodb+srv://SkaneDNikola:AAA@cluster0.s37z8ik.mongodb.net/videosLinks"
+);
 
 app.use("/", require("./routes/linkRoute"));
 
