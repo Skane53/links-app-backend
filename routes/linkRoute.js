@@ -1,5 +1,4 @@
 const express = require("express");
-const { URL } = require("../../frontend/src/App");
 const router = express.Router();
 const Link = require("../models/linkModel");
 
@@ -34,7 +33,8 @@ router.route("/delete").post((req, res) => {
   }
 });
 
-router.route(`${URL}/links`).post((req, res) => {
+router.route(`/links`).post((req, res) => {
+  console.log(URL);
   Link.aggregate([
     {
       $search: {

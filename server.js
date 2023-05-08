@@ -2,16 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-const { URL } = require("../frontend/src/App");
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://links-app-khoumzy-api.onrender.com",
-    ],
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
