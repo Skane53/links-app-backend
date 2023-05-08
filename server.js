@@ -6,7 +6,10 @@ const { urlencoded } = require("body-parser");
 
 app.use(
   cors({
-    origin: ["https://links-app-khoumzy.onrender.com/"],
+    origin: [
+      "http://localhost:3000",
+      "https://links-app-khoumzy.onrender.com/",
+    ],
   })
 );
 app.use(urlencoded({ extended: false }));
