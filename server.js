@@ -4,14 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const { urlencoded } = require("body-parser");
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://links-app-khoumzy.onrender.com/",
-    ],
-  })
-);
+app.use(cors());
 app.use(urlencoded({ extended: false }));
 app.use(express.json());
 
