@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+const { URL } = require("../frontend/src/App");
 
 app.use(
   cors({
