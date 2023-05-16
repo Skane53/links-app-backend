@@ -4,7 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const { urlencoded } = require("body-parser");
 
-app.use(cors());
+app.use(cors({ origin: "https://links-app-client.onrender.com" }));
 app.use(urlencoded({ extended: false }));
 app.use(express.json());
 
